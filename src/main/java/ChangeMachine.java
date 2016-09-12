@@ -68,6 +68,11 @@ public class ChangeMachine {
   }
 
   public String makeChange(Float totalCash){
+
+    if(totalCash > 8.20)
+    {
+      return "We don't have enough coins!";
+    }
     int quarterChangeTotal = makeQuarterChange(totalCash);
     float updatedCashTotal = totalCash - (quarterChangeTotal * 0.25f);
     int dimeChangeTotal = makeDimeChange(updatedCashTotal);
